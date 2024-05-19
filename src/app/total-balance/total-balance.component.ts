@@ -1,5 +1,5 @@
 import { Component, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BalanceService } from '../services/balance.service'; // Importa el servicio
 
 @Component({
   standalone: true,
@@ -9,8 +9,9 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class TotalBalanceComponent {
+  constructor(private balanceService: BalanceService) {}
+
   totalUSDT = computed(() => {
-    // Suponiendo que tienes alguna lógica para calcular el total
-    return 0;
+    return this.balanceService.totalUSDT();
   });
 }

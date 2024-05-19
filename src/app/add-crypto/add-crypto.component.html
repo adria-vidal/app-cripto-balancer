@@ -1,5 +1,11 @@
 <input type="text" (input)="onFilterChange($event)" placeholder="Filtrar criptomonedas" />
-<select (change)="onSymbolSelect($event)">
-  <option *ngFor="let symbol of filteredSymbols()" [value]="symbol">{{ symbol }}</option>
+<select (change)="onSymbolSelect($event)" [value]="cryptoName()">
+  <option *ngFor="let symbol of filteredSymbols()" [value]="symbol.symbol">{{ symbol.symbol }}</option>
 </select>
-<button (click)="agregarCripto()">Agregar</button>
+<div *ngIf="selectedPrice()">
+  Precio: <span>{{ selectedPrice() }}</span>
+</div>
+<input type="text" (input)="onManualPriceChange($event)" [value]="manualPrice()" placeholder="Escribe un precio manual (opcional)" />
+<input type="number" (input)="onQuantityChange($event)" [value]="quantity()" placeholder="Cantidad" />
+<button (click)="comprarCripto()">Comprar</button>
+<button (click)="venderCripto()">Vender</button>
