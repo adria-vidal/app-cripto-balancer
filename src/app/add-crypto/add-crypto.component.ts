@@ -1,5 +1,5 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';  // Importar CommonModule
+import { Component, inject, OnInit, signal, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BinanceApiService } from '../services/binance-api.service';
 
 @Component({
@@ -10,7 +10,13 @@ import { BinanceApiService } from '../services/binance-api.service';
 })
 export class AddCryptoComponent implements OnInit {
   cryptoName = signal('');
+  filter = signal('');
   symbols = signal<string[]>([]);
+  filteredSymbols = computed(() =>
+    this.symbols().filter(symbol =>
+      symbol.toLowerCase().includes(this.filter().toLowerCase())
+    )
+  );
 
   constructor(private binanceApi: BinanceApiService) {}
 
@@ -26,6 +32,13 @@ export class AddCryptoComponent implements OnInit {
     const selectElement = event.target as HTMLSelectElement;
     if (selectElement) {
       this.cryptoName.set(selectElement.value);
+    }
+  }
+
+  onFilterChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement) {
+      this.filter.set(inputElement.value);
     }
   }
 

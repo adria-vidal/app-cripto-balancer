@@ -1,4 +1,5 @@
+<input type="text" (input)="onFilterChange($event)" placeholder="Filtrar criptomonedas" />
 <select (change)="onSymbolSelect($event)">
-    <option *ngFor="let symbol of symbols()" [value]="symbol">{{ symbol }}</option>
-  </select>
-  <button (click)="agregarCripto()">Agregar</button>
+  <option *ngFor="let symbol of filteredSymbols()" [value]="symbol">{{ symbol }}</option>
+</select>
+<button (click)="agregarCripto()">Agregar</button>

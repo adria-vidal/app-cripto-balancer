@@ -1,5 +1,5 @@
 import { Component, signal, computed } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   selector: 'app-transaction-history',
