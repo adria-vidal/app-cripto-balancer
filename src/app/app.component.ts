@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AddCryptoComponent } from './add-crypto/add-crypto.component';
+import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
+import { TotalBalanceComponent } from './total-balance/total-balance.component';
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [AddCryptoComponent, TransactionHistoryComponent, TotalBalanceComponent]
 })
-export class AppComponent {
-  title = 'app-cripto';
-}
+export class AppComponent {}
