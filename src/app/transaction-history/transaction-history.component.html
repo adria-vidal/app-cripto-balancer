@@ -1,4 +1,4 @@
-<div *ngFor="let registro of registros(); let i = $index">
-    <div>{{ registro.fecha }} - {{ registro.operacion }}: {{ registro.cripto }} por {{ registro.cantidad }} USDT</div>
-  </div>
-  <button *ngIf="registros().length > 2" (click)="verTodo()">Ver todo el historial</button>
+<div *ngFor="let registro of registros; let i = index">
+  <div>{{ registro.fecha }} - {{ registro.operacion }}: {{ registro.cripto }} por {{ registro.cantidad }} USDT</div>
+</div>
+<button *ngIf="registros.length > 2" (click)="verTodo()">Ver todo el historial</button>

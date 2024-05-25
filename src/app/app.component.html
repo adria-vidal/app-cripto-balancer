@@ -1,5 +1,9 @@
-<app-add-crypto></app-add-crypto>
-<app-total-balance></app-total-balance>
-<app-transaction-history></app-transaction-history>
-
-
+<div *ngIf="!isLoggedIn">
+    <app-login></app-login>
+  </div>
+  <div *ngIf="isLoggedIn">
+    <app-add-crypto></app-add-crypto>
+    <app-total-balance></app-total-balance>
+    <app-transaction-history></app-transaction-history>
+  </div>
+  

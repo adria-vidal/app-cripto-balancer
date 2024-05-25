@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BinanceApiService } from '../services/binance-api.service';
 import { BalanceService } from '../services/balance.service';
+import { ApiService } from '../services/api.services';
 
 //TIPOS DE DATOS
 type OperationType = 'Comprar' | 'Vender';
