@@ -1,0 +1,14 @@
+<!-- api-key-form.component.html -->
+<div>
+    <h2>Configurar API de Binance</h2>
+    <form (ngSubmit)="saveKeys()">
+      <label for="apiKey">API Key:</label>
+      <input type="text" id="apiKey" [(ngModel)]="apiKey" name="apiKey" required>
+      
+      <label for="secretKey">Secret Key:</label>
+      <input type="text" id="secretKey" [(ngModel)]="secretKey" name="secretKey" required>
+      
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+  
