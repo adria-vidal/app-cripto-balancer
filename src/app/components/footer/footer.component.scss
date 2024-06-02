@@ -1,0 +1,22 @@
+.footer {
+    background-color: #2d3e50;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  
+    .footer-item {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem; // Aumentar el tamaño de los iconos
+      &:hover {
+        background-color: #1a2530;
+        border-radius: 5px;
+      }
+    }
+  }
+  

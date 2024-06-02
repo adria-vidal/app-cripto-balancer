@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Arial", sans-serif; }
+mat-toolbar {
+    background-color: #212121;
+    color: #fff;
+  }
+  
+  mat-toolbar a {
+    color: #fff;
+  }
+  
+  mat-toolbar a:hover {
+    color: #ffcc00;
+  }
+  
+  .footer-toolbar {
+    background-color: #212121;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

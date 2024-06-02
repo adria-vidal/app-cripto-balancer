@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6e918e;
+    padding: 0.5rem 1rem;
+    color: white;
+  
+    .navbar-brand img {
+      height: 60px;
+    }
+  
+    .navbar-center .search-input {
+      width: 300px;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+    }
+  
+    .navbar-end .navbar-item {
+      color: white;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+  
+      &:hover {
+        color: #ffdd57;
+      }
+    }
+  }
+  
