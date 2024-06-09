@@ -1,0 +1,64 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Previene el scroll en la página principal cuando el modal está abierto */
+  }
+  
+  .modal {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80%; /* Limita la altura del modal */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Permite que el contenido del modal use flex para distribuir elementos */
+  }
+  
+  .modal-content {
+    overflow-y: auto; /* Habilita el scroll vertical dentro del modal */
+    flex-grow: 1; /* Permite que el contenido principal del modal crezca */
+    margin-top: 10px;
+  }
+  
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .transaction-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .compra {
+    background-color: rgba(0, 255, 0, 0.1); /* Verde suave para compras */
+    color: #008000; /* Verde más oscuro para el texto */
+  }
+  
+  .venta {
+    background-color: rgba(255, 0, 0, 0.1); /* Rojo suave para ventas */
+    color: #800000; /* Rojo más oscuro para el texto */
+  }
+  

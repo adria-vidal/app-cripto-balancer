@@ -1,22 +1,62 @@
 .footer {
-    background-color: #2d3e50;
-    color: white;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  background-color: #2d3e50;
+  color: white;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
     display: flex;
-    justify-content: space-around;
-  
-    .footer-item {
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      font-size: 1.5rem; // Aumentar el tamaño de los iconos
-      &:hover {
-        background-color: #1a2530;
-        border-radius: 5px;
-      }
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; // Limita el ancho máximo para evitar sobresalir
+    padding: 0 1rem; // Añade padding para espaciar los elementos
+  }
+
+  .footer-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #1a2530;
+      border-radius: 5px;
+    }
+
+    i {
+      text-align: center; // Centra el icono dentro del espacio disponible
     }
   }
-  
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: row;
+    padding: 0.5rem; // Ajusta el padding para móviles
+  }
+
+  .content {
+    justify-content: space-around; // Distribuye los elementos uniformemente
+    padding: 0 0.5rem; // Reduce padding en móviles
+    flex-wrap: nowrap; // Evita que los elementos se envuelvan
+  }
+
+  .footer-item {
+    margin: 0 0.5rem; // Añade márgenes laterales para separar los iconos
+    font-size: 1.2rem; // Reduce el tamaño de los iconos para móviles
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-item {
+    font-size: 1.5rem; // Ajusta el tamaño de los iconos para tablets
+  }
+}

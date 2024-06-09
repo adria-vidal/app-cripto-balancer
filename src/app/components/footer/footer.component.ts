@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import * as feather from 'feather-icons';
 
 @Component({
-  standalone: true,
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [CommonModule]
+  standalone: true,
+  imports: []
 })
-export class FooterComponent { }
+export class FooterComponent implements OnInit {
+  ngOnInit() {
+    feather.replace();
+  }
+}

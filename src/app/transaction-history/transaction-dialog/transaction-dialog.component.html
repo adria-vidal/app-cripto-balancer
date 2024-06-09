@@ -1,0 +1,12 @@
+<div class="modal-backdrop" *ngIf="isVisible">
+    <div class="modal">
+      <h2>Historial de Transacciones</h2>
+      <button class="close-button" (click)="closeDialog()">×</button>
+      <div class="modal-content">
+        <div *ngFor="let registro of registros; let i = index" [ngClass]="{'compra': registro.operacion === 'Comprar', 'venta': registro.operacion === 'Vender'}" class="transaction-item">
+          <div>{{ registro.fecha }} - {{ registro.operacion }}: {{ registro.cripto }} por {{ registro.cantidad }} USDT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
