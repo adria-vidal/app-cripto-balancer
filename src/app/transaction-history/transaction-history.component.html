@@ -1,6 +1,11 @@
 <div *ngFor="let registro of registros.slice(0, 2); let i = index" [ngClass]="{'compra': registro.operacion === 'Comprar', 'venta': registro.operacion === 'Vender'}">
   <div>{{ registro.fecha }} - {{ registro.operacion }}: {{ registro.cripto }} por {{ registro.cantidad }} USDT</div>
 </div>
-<button *ngIf="registros.length > 2" (click)="openDialog()">Ver todo el historial</button>
+<button *ngIf="registros.length > 2" (click)="verTodo()">Ver todo el historial</button>
 
-<app-transaction-dialog [registros]="registros" [isVisible]="dialogVisible" (close)="dialogVisible = false"></app-transaction-dialog>
+<!-- Aquí incluimos el componente del diálogo -->
+<app-transaction-dialog 
+  [registros]="registros" 
+  [isVisible]="isDialogVisible" 
+  (close)="closeDialog()">
+</app-transaction-dialog>

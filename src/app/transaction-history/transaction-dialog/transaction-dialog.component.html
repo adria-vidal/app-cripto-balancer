@@ -1,9 +1,30 @@
 <div class="modal-backdrop" *ngIf="isVisible">
-    <div class="modal">
+    <div class="modal-content">
       <h2>Historial de Transacciones</h2>
       <button class="close-button" (click)="closeDialog()">×</button>
-      <div class="modal-content">
-        <div *ngFor="let registro of registros; let i = index" [ngClass]="{'compra': registro.operacion === 'Comprar', 'venta': registro.operacion === 'Vender'}" class="transaction-item">
+      
+      <!-- Filtros con Bootstrap -->
+      <div class="filters mb-3">
+        <div class="form-group mb-2">
+          <label for="filterCrypto">Filtrar por Criptomoneda:</label>
+          <select class="form-control" [(ngModel)]="selectedCrypto" (change)="applyFilters()">
+            <option *ngFor="let crypto of availableCryptos" [value]="crypto">{{ crypto }}</option>
+          </select>
+        </div>
+        <div class="form-group mb-2">
+          <label for="filterOperation">Filtrar por Operación:</label>
+          <select class="form-control" [(ngModel)]="selectedOperation" (change)="applyFilters()">
+            <option [value]="'Comprar'">Comprar</option>
+            <option [value]="'Vender'">Vender</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Lista de transacciones con scroll -->
+      <div class="transaction-list">
+        <div *ngFor="let registro of filteredRegistros; let i = index" 
+             class="transaction-item" 
+             [ngClass]="{'compra': registro.operacion === 'Comprar', 'venta': registro.operacion === 'Vender'}">
           <div>{{ registro.fecha }} - {{ registro.operacion }}: {{ registro.cripto }} por {{ registro.cantidad }} USDT</div>
         </div>
       </div>

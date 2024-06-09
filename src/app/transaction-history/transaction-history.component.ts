@@ -11,29 +11,33 @@ import { TransactionDialogComponent } from './transaction-dialog/transaction-dia
 })
 export class TransactionHistoryComponent implements OnInit {
   registros = [
+    // Transacciones de ejemplo
     { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'BTC', cantidad: 0.01 },
     { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
-    { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'BTC', cantidad: 0.01 },
-    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
-    { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'BTC', cantidad: 0.01 },
-    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
-    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
-    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
-    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
+    { fecha: '2024-05-21', operacion: 'Vender', cripto: 'BTC', cantidad: 0.01 },
     { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
     { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'BTC', cantidad: 0.01 },
     { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
-    { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'BTC', cantidad: 0.01 }
-
-    // Agrega más transacciones para probar el botón de "Ver todo el historial"
+    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
+    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
+    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
+    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'XRP', cantidad: 0.1 },
+    { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'BTC', cantidad: 0.01 },
+    { fecha: '2024-05-22', operacion: 'Vender', cripto: 'ETH', cantidad: 0.1 },
+    { fecha: '2024-05-21', operacion: 'Comprar', cripto: 'LTC', cantidad: 0.01 }
   ];
-  dialogVisible = false;
+
+  isDialogVisible = false;
 
   ngOnInit(): void {
     // Aquí puedes cargar los registros desde un servicio si es necesario
   }
 
-  openDialog() {
-    this.dialogVisible = true;
+  verTodo() {
+    this.isDialogVisible = true;
+  }
+
+  closeDialog() {
+    this.isDialogVisible = false;
   }
 }

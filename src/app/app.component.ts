@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
 import { AddCryptoComponent } from "./add-crypto/add-crypto.component";
 import { TotalBalanceComponent } from "./total-balance/total-balance.component";
 import { TransactionHistoryComponent } from "./transaction-history/transaction-history.component";
@@ -14,7 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    imports: [RouterModule, CommonModule, AddCryptoComponent, TotalBalanceComponent, TransactionHistoryComponent, LoginComponent, NavComponent, FooterComponent]
+    imports: [RouterModule, CommonModule, FormsModule, AddCryptoComponent, TotalBalanceComponent, TransactionHistoryComponent, LoginComponent, NavComponent, FooterComponent]
 })
 export class AppComponent {
   authService = inject(AuthService);
