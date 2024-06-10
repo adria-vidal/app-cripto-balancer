@@ -1,24 +1,170 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+
+/* Import FontAwesome for icons */
 @import "~@fortawesome/fontawesome-free/css/all.css";
+@import './variables';
+/* Define Color Variables */
+$color-primary-dark: #05161A;
+$color-primary: #072E33;
+$color-secondary: #0C7075;
+$color-accent: #0F969C;
+$color-light: #6DA5C0;
+$color-medium: #294D61;
 
+/* Base Styles for HTML and Body */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Arial", sans-serif;
+  background-color: $color-primary-dark; /* Apply primary dark color as background */
+  color: $color-light; /* Use light color for text */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Arial", sans-serif; }
+/* Styles for mat-toolbar (if you are using Angular Material) */
 mat-toolbar {
-    background-color: #212121;
-    color: #fff;
-  }
-  
-  mat-toolbar a {
-    color: #fff;
-  }
-  
-  mat-toolbar a:hover {
-    color: #ffcc00;
-  }
-  
-  .footer-toolbar {
-    background-color: #212121;
-  }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  background-color: $color-primary;
+  color: $color-light;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+}
+
+mat-toolbar a {
+  color: $color-light;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+mat-toolbar a:hover {
+  color: $color-accent;
+}
+
+.footer-toolbar {
+  background-color: $color-primary-dark;
+  color: $color-light;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-toolbar i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.footer-toolbar i:hover {
+  color: $color-accent;
+}
+
+/* Additional Global Styles */
+
+/* Ensure consistent font styling */
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+}
+
+/* General Button Styles */
+button {
+  background-color: $color-accent;
+  color: $color-primary-dark;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: $color-secondary;
+  color: $color-light;
+}
+
+/* Input and Select Fields */
+input[type="text"],
+input[type="number"],
+select {
+  background-color: $color-medium;
+  color: $color-light;
+  border: 1px solid $color-accent;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: $color-secondary;
+}
+
+/* Style for modal backdrops */
+.modal-backdrop {
+  background-color: rgba($color-primary-dark, 0.8);
+}
+
+/* Links */
+a {
+  color: $color-light;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-accent;
+  text-decoration: underline;
+}
+
+/* General container style */
+.container {
+  padding: 20px;
+  background-color: $color-primary;
+  border-radius: 8px;
+}
+
+/* Card Style for Transaction and Other Items */
+.card {
+  background-color: $color-primary;
+  color: $color-light;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.card.compra {
+  background-color: rgba($color-secondary, 0.2);
+}
+
+.card.venta {
+  background-color: rgba($color-accent, 0.2);
+}
+
+/* Specific Styles for Transaction Items */
+.transaction-item {
+  background-color: $color-primary;
+  color: $color-light;
+  padding: 10px;
+  border-bottom: 1px solid $color-medium;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.transaction-item.compra {
+  background-color: rgba($color-secondary, 0.2);
+}
+
+.transaction-item.venta {
+  background-color: rgba($color-accent, 0.2);
+}
+
+/* Ensure dialogs are styled consistently */
+.dialog {
+  background-color: $color-primary;
+  color: $color-light;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}

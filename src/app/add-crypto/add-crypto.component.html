@@ -1,11 +1,20 @@
-<input type="text" (input)="onFilterChange($event)" placeholder="Filtrar criptomonedas" />
-<select (change)="onSymbolSelect($event)" [value]="cryptoName()">
-  <option *ngFor="let symbol of filteredSymbols()" [value]="symbol.symbol">{{ symbol.symbol }}</option>
-</select>
-<div *ngIf="selectedPrice()">
-  Precio: <span>{{ selectedPrice() }}</span>
+<div class="add-crypto-container">
+  <input type="text" (input)="onFilterChange($event)" placeholder="Filtrar criptomonedas" class="form-control" />
+  
+  <select (change)="onSymbolSelect($event)" [value]="cryptoName()" class="form-control mt-2">
+    <option *ngFor="let symbol of filteredSymbols()" [value]="symbol.symbol">{{ symbol.symbol }}</option>
+  </select>
+  
+  <div *ngIf="selectedPrice()" class="price-display mt-2">
+    Precio: <span>{{ selectedPrice() }}</span>
+  </div>
+  
+  <input type="text" (input)="onManualPriceChange($event)" [value]="manualPrice()" placeholder="Escribe un precio manual (opcional)" class="form-control mt-2" />
+  
+  <input type="number" (input)="onQuantityChange($event)" [value]="quantity()" placeholder="Cantidad" class="form-control mt-2" />
+  
+  <div class="button-container mt-3">
+    <button (click)="comprarCripto()" class="add-crypto-button comprar">Comprar</button>
+    <button (click)="venderCripto()" class="add-crypto-button vender mt-2">Vender</button>
+  </div>
 </div>
-<input type="text" (input)="onManualPriceChange($event)" [value]="manualPrice()" placeholder="Escribe un precio manual (opcional)" />
-<input type="number" (input)="onQuantityChange($event)" [value]="quantity()" placeholder="Cantidad" />
-<button (click)="comprarCripto()">Comprar</button>
-<button (click)="venderCripto()">Vender</button>

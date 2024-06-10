@@ -1,70 +1,64 @@
+@import '../../../variables';
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba($color-primary-dark, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1040;
 }
 
 .modal-content {
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: $color-primary;
+  color: $color-light;
   padding: 20px;
+  border-radius: 8px;
   max-width: 600px;
   width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1050;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 24px;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.transaction-list {
-  max-height: 400px; /* Ajusta según la altura deseada */
   overflow-y: auto;
-}
-
-.transaction-item {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-
-  &.compra {
-    background-color: #e0ffe0; /* Verde claro para compra */
-  }
-
-  &.venta {
-    background-color: #ffe0e0; /* Rojo claro para venta */
-  }
+  max-height: 80vh;
 }
 
 .filters {
-  margin-bottom: 15px;
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
+  background-color: $color-primary-dark;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.filters .form-control {
+  background-color: $color-medium;
+  color: $color-light;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.transaction-item {
+  background-color: $color-primary;
+  color: $color-light;
+  padding: 10px;
+  border-bottom: 1px solid $color-medium;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.transaction-item.compra {
+  background-color: rgba($color-secondary, 1);
+}
+
+.transaction-item.venta {
+  background-color: rgba($color-accent, 0.2);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: $color-light;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }

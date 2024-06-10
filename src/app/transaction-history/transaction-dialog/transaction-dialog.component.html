@@ -8,12 +8,14 @@
         <div class="form-group mb-2">
           <label for="filterCrypto">Filtrar por Criptomoneda:</label>
           <select class="form-control" [(ngModel)]="selectedCrypto" (change)="applyFilters()">
+            <option value="">Mostrar todas</option>
             <option *ngFor="let crypto of availableCryptos" [value]="crypto">{{ crypto }}</option>
           </select>
         </div>
         <div class="form-group mb-2">
           <label for="filterOperation">Filtrar por Operación:</label>
           <select class="form-control" [(ngModel)]="selectedOperation" (change)="applyFilters()">
+            <option value="">Mostrar todas</option>
             <option [value]="'Comprar'">Comprar</option>
             <option [value]="'Vender'">Vender</option>
           </select>

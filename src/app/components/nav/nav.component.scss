@@ -1,10 +1,11 @@
+@import '../../../variables';
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #6e918e;
+  background-color: #2d3e50; // Fondo de la barra de navegación
   padding: 0.5rem 1rem;
-  color: white;
+  color: $color-light; // Color del texto de la barra de navegación
   flex-wrap: wrap; // Permite que los elementos se envuelvan si es necesario
 
   .navbar-brand img {
@@ -14,17 +15,19 @@
   .navbar-center .search-input {
     width: 300px;
     padding: 0.5rem;
-    border: none;
+    border: 1px solid $color-light;;
     border-radius: 5px;
+    background-color: $color-medium; // Fondo del input de búsqueda
+    color: $color-light; // Color del texto del input de búsqueda
   }
 
   .navbar-end .navbar-item {
-    color: white;
+    color: $color-light; // Color de los iconos en la barra de navegación
     margin-left: 1rem;
     font-size: 1.5rem;
 
     &:hover {
-      color: #ffdd57;
+      color: $color-accent; // Color de los iconos al pasar el cursor por encima
     }
   }
 }

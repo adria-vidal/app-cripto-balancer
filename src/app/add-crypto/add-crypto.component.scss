@@ -1,0 +1,52 @@
+@import '../../../variables';
+/* Estilos para el componente AddCrypto */
+/* Estilos para el componente AddCrypto */
+.add-crypto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: $color-primary-dark; // Fondo oscuro para el contenedor principal
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .form-control {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    border: 1px solid $color-light; // Borde claro para inputs
+    border-radius: 5px;
+    background-color: $color-medium; // Fondo para los inputs
+    color: $color-light;
+  }
+  
+  .price-display {
+    color: $color-light; // Color claro para el texto de precio
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; // Asegurar que los botones ocupen todo el ancho del contenedor
+  }
+  
+  .add-crypto-button {
+    width: 100%; // Los botones ocupan todo el ancho
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-crypto-button.comprar {
+    background-color: $color-accent !important; // Color para el botón de compra
+    color: white;
+  }
+  
+  .add-crypto-button.vender {
+    background-color: $color-secondary !important; // Color para el botón de venta
+    color: white;
+  }
+  
